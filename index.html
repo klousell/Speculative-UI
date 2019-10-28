@@ -1,27 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Hello!</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    
-    <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
-  </head>  
-  <body>
-    <h1>Hi there!</h1>
-    
-    <p>
-      I'm your cool new webpage. Made with <a href="https://glitch.com">Glitch</a>!
-    </p>
+    <head>
+        <title>Banana meter</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- import the stylesheet -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow:500" />
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <!-- import the teachable machine libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.1.2/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.7.0/dist/teachablemachine-image.min.js"></script>
+        <!-- import our code -->
+        <script src="./js/model.js"></script>
+        <script src="./js/bargraph.js"></script>
+    </head>
+    <body>
+        <section id="model">
+            <h1>I taught a machine learning model to tell how ripe bananas are.</h1>
+            <!-- <h2>Hold up a banana to the webcam, or drag an image onto it. </h2> -->
+            <h2>Hold up a banana to the webcam.</h2>
+            <div id="webcam-wrapper"></div>
+            <div id="graph-wrapper"></div>
+        </section>
+        <section id="info">
+            <h2>
+                This machine learning model was made without coding using
+                <a href="null">Teachable Machine.</a>
+            </h2>
+            <h2><a href="null">Learn how we made it.</a></h2>
+        </section>
+        <footer>
+            <h2><a href="null">Remix this site on Glitch</a></h2>
+        </footer>
 
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
-  </body>
+        <script type="text/javascript">
+            //           _____             .|                      _.._     ,.--.
+            //   _.._    \  __`'.        .' |_      _  __  ___    / .. `.  //    \
+            //  / .. `.   | |-.\ \ .-. .'     |    | |/  `.'  `. / /__\  \ \\    /
+            // / /__\  \  | |   \ ||_|'--.  .-'    |  .-. .-.  '| .-----'`  `'--'
+            //| .-----'`  | |   / |.-.   |  |      | |  | |  | | \ '-...--. ,.--.
+            // \ '-...--. | |_.' /|| |   |  '.'    | |  | |  | |  `. ___.' //    \
+            //  `. ___.' /_____.'/ | |   |   /     |_|  |_|  |_|           \\    /
+            //           \_____|/  |_|   `'-'                               `'--'
+            let modelURL = 'https://storage.googleapis.com/tm-models/LlOMjepS/'
+
+            // more documentation available at
+            // https://github.com/googlecreativelab/teachablemachine-libraries
+            
+            setupBarGraph(modelURL)
+            setupModel(modelURL,updateBarGraph)
+        </script>
+    </body>
 </html>
