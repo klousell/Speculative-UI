@@ -6,21 +6,21 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- these import the stylesheets: -->
+        <!-- these load the stylesheets: -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow:500" />
         <link rel="stylesheet" href="./css/reset.css" />
         <link rel="stylesheet" href="./css/style.css" />
-        <!-- import the teachable machine libraries -->
+        <!-- these load the teachable machine libraries: -->
+        <!-- more documentation at https://github.com/googlecreativelab/teachablemachine-libraries -->
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.1.2/dist/tf.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.7.0/dist/teachablemachine-image.min.js"></script>
-        <!-- import our code -->
+        <!-- these load our code: -->
         <script src="./js/model.js"></script>
         <script src="./js/bargraph.js"></script>
     </head>
     <body>
         <section id="model">
             <h1>I taught a machine learning model to tell how ripe bananas are.</h1>
-            <!-- <h2>Hold up a banana to the webcam, or drag an image onto it. </h2> -->
             <h2>Hold up a banana to the webcam.</h2>
             <div id="webcam-wrapper"></div>
             <div id="graph-wrapper"></div>
@@ -28,6 +28,7 @@
         <section id="info">
             <h2>
                 This machine learning model was made without coding using
+                <!-- TODO update URLS -->
                 <a href="null">Teachable Machine.</a>
             </h2>
             <h2><a href="null">Learn how we made it.</a></h2>
@@ -45,12 +46,15 @@
             // \ '-...--. | |_.' /|| |   |  '.'    | |  | |  | |  `. ___.' //    \
             //  `. ___.' /_____.'/ | |   |   /     |_|  |_|  |_|           \\    /
             //           \_____|/  |_|   `'-'                               `'--'
+            // train your own model using [TODO_TM2_URL], and replace this URL with your own
             let modelURL = 'https://storage.googleapis.com/tm-models/LlOMjepS/'
 
-            // more documentation available at
-            // https://github.com/googlecreativelab/teachablemachine-libraries
-            
+            // setupBarGraph is defined in the js/bargraph.js file
             setupBarGraph(modelURL)
+            // setupModel is defined in the js/model.js file
+            // we pass in another function: updateBarGraph (defined in the js/bargraph.js file)
+            // setupModel will store the updateBarGraph function, 
+            // and call it every time it has new prediction data from the model
             setupModel(modelURL,updateBarGraph)
         </script>
     </body>
