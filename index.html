@@ -19,7 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.7.0/dist/teachablemachine-image.min.js"></script>
     <!-- these load our code: -->
     <script src="./js/model.js"></script>
-    <script src="./js/bargraph.js"></script>
+    <script src="./js/bar-graph.js"></script>
   </head>
   <body>
     <section id="model">
@@ -52,10 +52,10 @@
       // train your own model using [TODO_TM2_URL], and replace this URL with your own
       let modelURL = "https://storage.googleapis.com/tm-models/LlOMjepS/";
 
-      // setupBarGraph is defined in the js/bargraph.js file
+      // setupBarGraph is defined in the js/bar-graph.js file
       setupBarGraph(modelURL);
-      // setupModel is defined in the js/model.js file
-      // we pass in another function: updateBarGraph (defined in the js/bargraph.js file)
+      // setupModel is defined in the js/model-runner.js file
+      // we pass in another function: updateBarGraph (defined in the js/bar-graph.js file)
       // setupModel will store the updateBarGraph function,
       // and call it every time it has new prediction data from the model
       setupModel(modelURL, updateBarGraph);
