@@ -12,13 +12,13 @@ async function setupModel(modelURL, predictionCB) {
     const metadataURL = `${modelURL}metadata.json`
 
     // Load the model using the tmImage library
-    model = await tmImage.load(checkpointURL, metadataURL)
+    model = await window.tmImage.load(checkpointURL, metadataURL)
 
     // Webcam has a square ratio and is flipped by default to match training
     const webcamFlipped = true
     // this function from the tmImage library returns a video element that
     // shows a video feed from the webcam
-    webcamEl = await tmImage.getWebcam(200, 200, 'front', webcamFlipped)
+    webcamEl = await window.tmImage.getWebcam(200, 200, 'front', webcamFlipped)
     webcamEl.play()
     // add the video element to the page
     document.getElementById('webcam-wrapper').appendChild(webcamEl)
