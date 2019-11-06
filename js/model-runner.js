@@ -18,7 +18,7 @@ export async function setupModel(URL, predictionCB) {
     // shows a video feed from the webcam
     webcam = new window.tmImage.Webcam(200, 200, true); //width, height, flipped
     await webcam.setup(); // request access to the webcam
-    webcam.play();
+    await webcam.play();
     // add the video element to the page
     document.getElementById('webcam-wrapper').appendChild(webcam.canvas);
 
