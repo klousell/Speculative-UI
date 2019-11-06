@@ -61,7 +61,9 @@
             // we pass in another function: updateBarGraph (defined in the js/bar-graph.js file)
             // setupModel will store the updateBarGraph function,
             // and call it every time it has new prediction data from the model
-            setupModel(URL, updateBarGraph);
+            setupModel(URL, data => {
+                updateBarGraph(data);
+            });
         </script>
     </body>
 </html>
