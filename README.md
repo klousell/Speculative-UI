@@ -17,5 +17,7 @@ if you set the `URL` variable equal to your new model, the site will load your c
 
 ### Change the Callback
 
-Everytime the model makes a prediction, we have the bar graph update to show it's prediction. We tell the model to do this when we call 
-`setupModel` in the `index.html` file. The second parameter to the 
+Everytime the model makes a prediction, we have the bar graph update using the prediction. We tell the model to do this when we call 
+`setupModel` in the `index.html` file. The second parameter to the `setupModel` function is a callback that takes the prediction data 
+from the model and does something with it.
+
