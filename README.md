@@ -39,6 +39,6 @@ data = [
 ## Share What You Make!
 If you make something cool on glitch with Teachable Machine,
 send us your project at [teachablemachine-support@google.com](mailto:teachablemachine-support@google.com) 
-so we can add it to our collection!
+so we can add it to [our collection!](https://glitch.com/@teachablemachine/teachable-machine-showcase)
 
 
