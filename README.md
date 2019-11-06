@@ -19,5 +19,26 @@ if you set the `URL` variable equal to your new model, the site will load your c
 
 Everytime the model makes a prediction, we have the bar graph update using the prediction. We tell the model to do this when we call 
 `setupModel` in the `index.html` file. The second parameter to the `setupModel` function is a callback that takes the prediction data 
-from the model and does something with it.
+from the model and does something with it. If you want someything else to happen using the prediction data, feel free to modify the 
+callback function:
+```
+setupModel(URL, data => {
+    updateBarGraph(data);
+    // Do more with the prediction data here.
+});
+```
+The callback function takes in a `data` parameter. This `data` parameter is an array of objects that store a `className` and a `probability`. 
+An example of prediction data returned by the model to use in your callback might look like this:
+```
+data = [
+    { className: 'Class 1', probability: .25 },
+    { className: 'Class 2', probability: .75 },
+]
+```
+
+## Share What You Make!
+If you make something cool on glitch with Teachable Machine,
+send us your project at [teachablemachine-support@google.com](mailto:teachablemachine-support@google.com) 
+so we can add it to our collection!
+
 
