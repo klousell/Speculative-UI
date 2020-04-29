@@ -13,11 +13,11 @@ If you want to remix this project there are a few ways to get started:
 If you train your own Teachable Machine model, when you export the model you will get a URL for it. In the `index.html` file, 
 if you set the `URL` variable equal to your new model, the site will load your classes and run your model.
 
-### Change the Callback
+### Change the Triggers
 
 Everytime the model makes a prediction, we have the bar graph update using the prediction. We tell the model to do this when we call 
 `setupModel` in the `index.html` file. The second parameter to the `setupModel` function is a callback that takes the prediction data 
-from the model and does something with it. If you want someything else to happen using the prediction data, feel free to modify the 
+from the model and does something with it. If you want something else to happen using the prediction data, feel free to modify the 
 callback function:
 ```
 setupModel(URL, data => {
