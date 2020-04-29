@@ -50,12 +50,8 @@
             // \ '-...--. | |_.' /|| |   |  '.'    | |  | |  | |  `. ___.' //    \
             //  `. ___.' /_____.'/ | |   |   /     |_|  |_|  |_|           \\    /
             //           \_____|/  |_|   `'-'                               `'--'
-            // train your own model and replace this URL with your own
-            //let URL = 'https://teachablemachine.withgoogle.com/models/oWA7osCuu/';
              
-          //variable to hold our audio file - URL is from the assets folder
-        //     var audio = new Audio('https://cdn.glitch.com/346851f9-6315-47e0-8bdb-bb91e3062b27%2Fohno.mp3?v=1588132464276');
-           
+        
           // setupBarGraph is defined in the js/bar-graph.js file
             setupBarGraph(URL);
             // setupModel is defined in the js/model-runner.js file
@@ -68,12 +64,7 @@
               //console.log(data);
               
               triggers(data);
-              /*
-              //THIS IS WHERE THE TRIGGER HAPPENS
-              if(data[0].probability > 0.75){
-                 audio.play();
-              }
-              */
+              
 
               
             });
