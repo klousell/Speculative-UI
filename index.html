@@ -52,8 +52,11 @@
             //           \_____|/  |_|   `'-'                               `'--'
             // train your own model using [TODO_TM2_URL], and replace this URL with your own
             let URL = 'https://teachablemachine.withgoogle.com/models/oWA7osCuu/';
-
-            // setupBarGraph is defined in the js/bar-graph.js file
+             
+          //variable to hold our audio file - URL is from the assets folder
+             var audio = new Audio('https://cdn.glitch.com/346851f9-6315-47e0-8bdb-bb91e3062b27%2Fohno.mp3?v=1588132464276');
+           
+          // setupBarGraph is defined in the js/bar-graph.js file
             setupBarGraph(URL);
             // setupModel is defined in the js/model-runner.js file
             // we pass in another function: updateBarGraph (defined in the js/bar-graph.js file)
@@ -64,9 +67,11 @@
               
               console.log(data);
               
-              var audio = new Audio('https://cdn.glitch.com/346851f9-6315-47e0-8bdb-bb91e3062b27%2Fohno.mp3?v=1588132464276');
-              audio.play();
+              if(data['hands on head'].probability > 0.75){
+                 audio.play();
+              }
               
+
               
             });
         </script>
