@@ -14,7 +14,26 @@ If you train your own Teachable Machine model, when you export the model you wil
 if you set the `URL` variable equal to your new model, the site will load your classes and run your model.
 
 ### Change the Triggers
+I created a triggers function that takes in a stream of data. This data consists of the class names from your model and their probability.
+The probability is the percentage of certainty that what the camera sees *matches* with the predictive class model.
 
+You can add your own triggers to the triggers() function in the triggers.js file.
+
+For example, ```data[0]``` is my 'hands on head' class, a class that represents me putting my hands on top of my head in dismay.
+
+In my code, if the model thinks the camera shows 'hands on head' with at least 75% probability, then it will play the audio file
+
+I have two classes, so my first class is data[0] and my second is data[1].
+
+**You may need to tweak the amount of acceptable probability.**
+
+```
+   if(data[0].probability > 0.75){
+      audio.play(); //play sound 'oh no!'
+  }
+```
+
+### How Does it do This?
 Everytime the model makes a prediction, we have the bar graph update using the prediction. We tell the model to do this when we call 
 `setupModel` in the `index.html` file. The second parameter to the `setupModel` function is a callback that takes the prediction data 
 from the model and does something with it. If you want something else to happen using the prediction data, feel free to modify the 
@@ -35,7 +54,9 @@ data = [
 ```
 
 ## More Details and Documentation
-This project uses the `tmImage` library. To learn more about this library,
-how to use it, read the [documentation](https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image).
+This project uses the `tmImage` library. To learn more about this library, [Documentation](https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image).
 
+### Resources
+- [Bananameter](https://medium.com/@warronbebster/teachable-machine-tutorial-bananameter-4bfffa765866) classifier tutorial
 
+Lee2sman 2020

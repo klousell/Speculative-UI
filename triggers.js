@@ -2,7 +2,6 @@
 
 //Consider your inputs, your outputs, and your interface between these
 
-
 //The classes referenced below come from my trained model https://teachablemachine.withgoogle.com/models/oWA7osCuu/
 //create your own model at http://teachablemachine.withgoogle.com 
 //If you remix this project place the model's URL below
@@ -18,13 +17,14 @@ function triggers(data){
   //You may have to tweak the probabilities
   
   //data[0] is my 'hands on head' class
+  //if the model thinks the camera shows 'hands on head' with at least 75% probability, then it will play the audio file
+  
    if(data[0].probability > 0.75){
       audio.play(); //play sound 'oh no!'
   }
         
   //data[1] is my 'nothing' class
   if(data[1].probability > 0.75){
-    
     
   }  
   
