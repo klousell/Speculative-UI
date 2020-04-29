@@ -1,10 +1,8 @@
 # Teachable Machine Image Demo
 
-This project demonstrates a machine learning model made using [Teachable Machine](https://teachablemachine.withgoogle.com/),
-a tool that let's anyone make machine learning models without writing any code. 
+This project demonstrates a machine learning model made using [Teachable Machine](https://teachablemachine.withgoogle.com/).
 
-We trained a model that determines banana ripeness, but you can train your own model to do anything you want! 
-Read more about how to train an image model in our [blog post](https://medium.com/p/4bfffa765866/).
+This project yells when you place your hands on your head.
 
 ## How to Hack
 
@@ -39,11 +37,5 @@ data = [
 ## More Details and Documentation
 This project uses the `tmImage` library. To learn more about this library,
 how to use it, read the [documentation](https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image).
-
-## Share What You Make!
-If you make something cool on glitch with Teachable Machine,
-send us your project at [teachablemachine-support@google.com](mailto:teachablemachine-support@google.com) 
-so we can add it to [our collection!](https://glitch.com/@teachablemachine/teachable-machine-showcase), 
-or share your project on twitter using #teachablemachine so we can check it out!
 
 

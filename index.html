@@ -20,8 +20,10 @@
     </head>
     <body>
         <section id="model">
-            <h1>I taught a machine learning model to tell how ripe bananas are.</h1>
-            <h2>Hold up a banana to the webcam.</h2>
+          <h1>
+            Have you made a mistake? Need to tell someone?...
+          </h1>
+            <h2>Put your hands on your head.</h2>
             <div id="webcam-wrapper">
               <div class="loader"></div>
             </div>
@@ -32,15 +34,9 @@
                 This machine learning model was made using 
                 <a href="https://teachablemachine.withgoogle.com/">Teachable Machine.</a>
             </h2>
-            <h2><a href="https://medium.com/p/4bfffa765866/">Learn how we made it without coding.</a></h2>
         </section>
-        <footer>
-            <h2>
-                <a href="https://glitch.com/edit/#!/remix/tm-image-demo"
-                    >Remix this site on Glitch</a
-                >
-            </h2>
-        </footer>
+        
+      
 
         <script type="module">
             import { setupModel } from './js/model-runner.js';
@@ -55,7 +51,7 @@
             //  `. ___.' /_____.'/ | |   |   /     |_|  |_|  |_|           \\    /
             //           \_____|/  |_|   `'-'                               `'--'
             // train your own model using [TODO_TM2_URL], and replace this URL with your own
-            let URL = 'https://teachablemachine.withgoogle.com/models/NE3Fl49O/';
+            let URL = 'https://teachablemachine.withgoogle.com/models/oWA7osCuu/';
 
             // setupBarGraph is defined in the js/bar-graph.js file
             setupBarGraph(URL);
@@ -65,6 +61,13 @@
             // and call it every time it has new prediction data from the model
             setupModel(URL, data => {
                 updateBarGraph(data);
+              
+              console.log(data);
+              
+              var audio = new Audio('https://cdn.glitch.com/346851f9-6315-47e0-8bdb-bb91e3062b27%2Fohno.mp3?v=1588132464276');
+              audio.play();
+              
+              
             });
         </script>
     </body>
