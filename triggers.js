@@ -20,7 +20,7 @@ function triggers(data){
   //if the model thinks the camera shows 'hands on head' with at least 75% probability, then it will play the audio file
   
    if(data[0].probability > 0.75){
-      audio.play(); //play sound 'oh no!'
+      //audio.play(); //play sound 'oh no!'
   }
         
   //data[1] is my 'nothing' class
