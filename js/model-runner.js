@@ -16,7 +16,7 @@ export async function setupModel(URL, predictionCB) {
 
     // this function from the tmImage library returns a video element that
     // shows a video feed from the webcam
-    webcam = new window.tmImage.Webcam(200, 200, true); //width, height, flipped
+    webcam = new window.tmImage.Webcam(350, 300, true); //width, height, flipped
     await webcam.setup(); // request access to the webcam
     await webcam.play();
     // add the video element to the page

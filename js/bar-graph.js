@@ -3,8 +3,8 @@ let bars = {};
 let graphWrapper;
 
 // these are the colors of our bars
-let colors = ['#E67701', '#D84C6F', '#794AEF', '#1291D0'];
-let lightColors = ['#FFECE2', '#FFE9EC', '#F1F0FF', '#E2F5FF'];
+let colors = ['#ff5252', '#36ba55', 'yellow', '#242424'];
+//let lightColors = ['#FFECE2', 'black', 'black', 'black'];
 
 // This function makes the bar graph
 // it takes in a URL to a teachable machine model,
@@ -41,10 +41,10 @@ function makeBar(label, index) {
 
     // style the elements
     let color = colors[index % colors.length];
-    let lightColor = lightColors[index % colors.length];
+    //let lightColor = lightColors[index % colors.length];
     barWrapper.style.color = color;
     barWrapper.style.setProperty('--color', color);
-    barWrapper.style.setProperty('--color-light', lightColor);
+    //barWrapper.style.setProperty('--color-light', lightColor);
 
     // save references to each element, so we can update them later
     bars[label] = {

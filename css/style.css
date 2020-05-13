@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;600&display=swap');
+
 :root {
-    --box-size: 200px;
+    --box-size: 250px;
     --gray: #9aa0a6;
 }
 body {
-    font-family: 'Barlow', sans-serif;
+    background-color: #242424;
+    font-family: 'Inconsolata', sans-serif;
     letter-spacing: 0.5px;
     display: flex;
     flex-direction: column;
@@ -19,11 +22,11 @@ section {
     width:100%;
 }
 section#model {
-    margin-top: 90px;
+    margin-top: 10px;
 }
-section#info {
+/*section#info {
     margin-top: 50px;
-}
+}*/
 section > * {
     margin: 14px;
 }
@@ -31,23 +34,28 @@ a,h1,h2 {
     text-align: center;
 }
 a {
-    color: #000;
+    color: #fff;
 }
 h1 {
-    font-size: 24px;
+    color: white;
+    font-size: 50px;
     line-height: 29px;
+    padding: 20px;
 }
 h2 {
-    font-size: 18px;
+    color: white;
+    font-size: 30px;
     line-height: 22px;
+    padding: 10px;
 }
 #webcam-wrapper {
-    width: var(--box-size);
+    width: /*var(--box-size)*/350px;
     height: var(--box-size);
     background-color: var(--gray);
     border-radius: 4px;
     overflow: hidden;
     position: relative;
+    border: 3px solid white;
 }
 .loader {
   position: absolute;
@@ -73,25 +81,28 @@ h2 {
     height: var(--box-size);
     transform: rotateY(180deg);
 }
-#graph-wrapper > div {
+#graph-wrapper /*> div */{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 10px 0;
+    margin: 10vw 0;
+    font-size: 20px;
+    font-weight: bold;
 }
 #graph-wrapper > div > * {
-    display: inline-block;
-    width: var(--box-size);
+    display: /*inline-*/block;
+    width: /*var(--box-size)*/ 10vw;
+    height: 3vw;
     margin: 0 10px;
 }
 #graph-wrapper > div > :first-child {
-    text-align: right;
+    text-align: center;
 }
 #graph-wrapper > div > progress {
     -webkit-appearance: none;
     appearance: none;
-    height: 28px;
+    height: 10vw;
 }
 #graph-wrapper > div > progress::-webkit-progress-bar {
     border-radius: 4px;
@@ -102,6 +113,15 @@ h2 {
     border-radius: 2px;
     background-color: var(--color);
 }
+
+p, #correct, #incorrect{
+  color: white;
+  font-size: 24px;
+  width: 60vw;
+  text-align: center;
+  padding-top: 50px;
+}
+
 footer {
     width: 100%;
     text-align: right;
